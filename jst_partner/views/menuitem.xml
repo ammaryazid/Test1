@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menu -->
+    <menuitem 
+            id="vendor_registration_menu" 
+            name="Vendor Registration" 
+            parent="purchase.menu_purchase_root" 
+            action="vendor_registration_action" 
+            sequence="3"/>
+
+
+</odoo>
