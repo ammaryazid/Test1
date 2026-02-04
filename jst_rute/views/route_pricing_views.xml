@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_route_pricing_form" model="ir.ui.view">
+        <field name="name">route.pricing.form</field>
+        <field name="model">route.pricing</field>
+        <field name="arch" type="xml">
+            <form string="Rute">
+                <sheet>
+
+                    <!-- HEADER -->
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                            <field name="origin_id"/>
+                            <field name="destination_id"/>
+                            <field name="distance_mil"/>
+                        </group>
+
+                        <group>
+                            <field name="moq_wmt"/>
+                            <field name="margin"/>
+                            <field name="sale_price_unit"/>
+                            <field name="currency_id"/>
+                        </group>
+                    </group>
+
+                    <!-- STRUCTURE PRICE -->
+                    <notebook>
+                        <page string="Structure Price">
+                            <field name="line_ids">
+                                <list editable="bottom">
+                                    <field name="category_id"/>
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="uom_id"/>
+                                    <field name="price"/>
+                                    <field name="subtotal"/>
+                                    <field name="cost_wmt"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- list VIEW -->
+    <record id="view_route_pricing_tree" model="ir.ui.view">
+        <field name="name">route.pricing.tree</field>
+        <field name="model">route.pricing</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="origin_id"/>
+                <field name="destination_id"/>
+                <field name="moq_wmt"/>
+                <field name="margin"/>
+                <field name="sale_price_unit"/>
+                <field name="currency_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ACTION -->
+    <!-- <record id="action_route_pricing" model="ir.actions.act_window">
+        <field name="name">Route Pricing</field>
+        <field name="res_model">route.pricing</field>
+        <field name="view_mode">list,form</field>
+    </record> -->
+
+    
+
+
+</odoo>
